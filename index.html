@@ -3,66 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salon Gülhan | Atakum</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Salon Gülhan | Atakum Premium Service</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background: radial-gradient(circle at top, #1e293b, #0f172a); color: #f8fafc; display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 20px; }
-        .container { background: rgba(30, 41, 59, 0.6); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.08); width: 100%; max-width: 420px; padding: 35px 25px; border-radius: 30px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7); text-align: center; }
+        :root {
+            --primary: #2563eb;
+            --secondary: #64748b;
+            --accent: #f59e0b;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #1e293b;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
         
-        .logo-area { width: 110px; height: 110px; background: #FFC107; border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 3px solid #fff; box-shadow: 0 0 25px rgba(255, 193, 7, 0.3); }
-        .logo-placeholder { font-size: 40px; font-weight: bold; color: #000; }
+        body { 
+            background: linear-gradient(135deg, #e0e7ff 0%, #f1f5f9 100%); 
+            color: var(--text); 
+            display: flex; 
+            justify-content: center; 
+            padding: 20px;
+            min-height: 100vh;
+        }
 
-        h1 { font-size: 24px; font-weight: 700; letter-spacing: 1px; margin-bottom: 5px; color: #fff; }
-        .subtitle { color: #3b82f6; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; }
+        .container { width: 100%; max-width: 480px; animation: fadeIn 0.8s ease-out; }
+
+        /* Üst Header Alanı */
+        .header-card { 
+            background: var(--card-bg); 
+            padding: 40px 20px; 
+            border-radius: 40px; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05); 
+            text-align: center; 
+            margin-bottom: 20px;
+            border: 1px solid rgba(255,255,255,0.8);
+        }
+
+        .logo-box {
+            width: 130px; height: 130px;
+            background: #fff;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex; align-items: center; justify-content: center;
+            border: 5px solid #fff;
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.15);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .logo-box:hover { transform: scale(1.05); }
+        .logo-box img { width: 85%; height: auto; }
+
+        h1 { font-size: 28px; color: #0f172a; font-weight: 700; margin-bottom: 5px; letter-spacing: -0.5px; }
+        .tagline { color: var(--primary); font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; }
         
-        .bio-section { background: rgba(255, 255, 255, 0.03); padding: 15px; border-radius: 15px; margin-bottom: 25px; border-left: 3px solid #3b82f6; text-align: left; }
-        .bio-text { font-size: 14px; color: #cbd5e1; line-height: 1.6; font-style: italic; }
+        /* Hizmet Kutucukları */
+        .service-scroll { 
+            display: flex; gap: 10px; overflow-x: auto; padding: 10px 0 20px; 
+            scrollbar-width: none;
+        }
+        .service-card {
+            min-width: 120px; background: #f1f5f9; padding: 15px; border-radius: 20px;
+            text-align: center; border: 1px solid transparent; transition: 0.3s;
+        }
+        .service-card:hover { border-color: var(--primary); background: #fff; }
+        .service-card i { font-size: 24px; display: block; margin-bottom: 8px; }
+        .service-card span { font-size: 12px; font-weight: 500; }
 
-        .services-grid { display: flex; justify-content: space-around; margin-bottom: 25px; font-size: 12px; color: #94a3b8; }
-        .service-item { display: flex; flex-direction: column; gap: 5px; }
+        /* Fiyat Listesi Alanı (Detay artırıcı) */
+        .info-section { 
+            background: var(--card-bg); border-radius: 35px; padding: 25px; 
+            margin-bottom: 20px; box-shadow: 0 15px 30px rgba(0,0,0,0.03);
+        }
+        .section-title { font-size: 16px; font-weight: 700; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; color: #334155; }
+        
+        .price-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px dashed #e2e8f0; font-size: 14px; }
+        .price-row:last-child { border: none; }
+        .price-name { color: #475569; }
+        .price-val { font-weight: 600; color: var(--primary); }
 
-        .btn { display: flex; align-items: center; justify-content: center; gap: 12px; background: #1e293b; color: white; padding: 16px; margin-bottom: 12px; border-radius: 16px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; border: 1px solid rgba(255, 255, 255, 0.05); font-size: 15px; }
-        .btn-whatsapp { background: linear-gradient(135deg, #10b981, #059669); border: none; }
-        .btn-call { background: linear-gradient(135deg, #3b82f6, #2563eb); border: none; }
+        /* İletişim Butonları - Cam Efektli Açık Renk */
+        .action-btns { display: grid; gap: 12px; }
+        .btn { 
+            display: flex; align-items: center; justify-content: center; gap: 12px;
+            padding: 18px; border-radius: 22px; text-decoration: none; font-weight: 600;
+            transition: 0.3s; font-size: 16px; border: none;
+        }
+        .btn-wa { background: #22c55e; color: white; box-shadow: 0 8px 20px rgba(34, 197, 94, 0.2); }
+        .btn-call { background: var(--primary); color: white; box-shadow: 0 8px 20px rgba(37, 99, 235, 0.2); }
+        .btn-insta { background: #fff; color: #d62976; border: 1.5px solid #fecdd3; }
 
-        .footer { margin-top: 30px; font-size: 10px; color: #475569; letter-spacing: 1px; }
+        /* Çalışma Saatleri Tablosu */
+        .status-badge { 
+            display: inline-block; padding: 6px 15px; border-radius: 50px; 
+            background: #dcfce7; color: #166534; font-size: 12px; font-weight: 700; margin-bottom: 15px;
+        }
+
+        /* Animasyonlar */
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        .footer-text { text-align: center; padding: 20px; font-size: 11px; color: #94a3b8; font-weight: 500; letter-spacing: 1px; }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="logo-area">
-            <div class="logo-placeholder">SG</div>
-        </div>
         
-        <h1>SALON GÜLHAN</h1>
-        <div class="subtitle">Premium Barber Studio</div>
+        <div class="header-card">
+            <div class="status-badge">● ŞU AN AÇIK</div>
+            <div class="logo-box">
+                <img src="https://via.placeholder.com/150/FFC107/000000?text=SALON+GÜLHAN" alt="Logo">
+            </div>
+            <h1>SALON GÜLHAN</h1>
+            <p class="tagline">Premium Barber Studio</p>
+            
+            <div class="service-scroll">
+                <div class="service-card"><i>✂️</i><span>Saç Kesim</span></div>
+                <div class="service-card"><i>🪒</i><span>Sakal Tasarım</span></div>
+                <div class="service-card"><i>💆‍♂️</i><span>Cilt Bakımı</span></div>
+                <div class="service-card"><i>🔥</i><span>Sıcak Havlu</span></div>
+            </div>
+        </div>
 
-        <div class="bio-section">
-            <p class="bio-text">
-                "Atakum'da stilin ve konforun buluşma noktası. Modern kesim teknikleri ve kişiye özel bakım hizmetlerimizle, imajınızı bir üst seviyeye taşıyoruz."
+        <div class="info-section">
+            <div class="section-title">📍 Lokasyon & Hizmet</div>
+            <p style="font-size: 14px; color: #64748b; line-height: 1.6; margin-bottom: 15px;">
+                Atakum'un kalbinde, modern ekipmanlar ve uzman kadromuzla stilinize değer katıyoruz. 
             </p>
+            
+            <div class="price-row"><span class="price-name">Modern Saç Kesimi</span><span class="price-val">Detaylı</span></div>
+            <div class="price-row"><span class="price-name">Sakal Tasarımı</span><span class="price-val">Detaylı</span></div>
+            <div class="price-row"><span class="price-name">VIP Komple Bakım</span><span class="price-val">Özel</span></div>
         </div>
 
-        <div class="services-grid">
-            <div class="service-item"><span>✂️</span><span>Saç Tasarım</span></div>
-            <div class="service-item"><span>🪒</span><span>Sakal Bakım</span></div>
-            <div class="service-item"><span>💆‍♂️</span><span>Cilt Bakımı</span></div>
+        <div class="action-btns">
+            <a href="https://wa.me/905XXXXXXXXX" class="btn btn-wa">💬 WhatsApp Randevu Hattı</a>
+            <a href="tel:05XXXXXXXXX" class="btn btn-call">📞 Hemen Ara</a>
+            <a href="https://instagram.com/salon_gulhan_alibey_mk" class="btn btn-insta">📸 Instagram'da İncele</a>
+            <a href="#" class="btn" style="background:#f1f5f9; color:#475569;">📍 Yol Tarifi Al</a>
         </div>
-        
-        <a href="https://wa.me/905XXXXXXXXX" class="btn btn-whatsapp">
-            <span>💬 Hızlı Randevu Al</span>
-        </a>
-        
-        <a href="tel:05XXXXXXXXX" class="btn btn-call">
-            <span>📞 İletişime Geç</span>
-        </a>
-        
-        <a href="https://www.google.com/maps/search/Salon+Gülhan+Atakum" class="btn">
-            <span>📍 Atakum Yol Tarifi</span>
-        </a>
 
-        <div class="footer">POWERED BY EMİLİO DIGITAL</div>
+        <div class="info-section" style="margin-top:20px; background: #f8fafc; border: 1px solid #e2e8f0;">
+            <div class="section-title">🕒 Çalışma Saatleri</div>
+            <div class="price-row"><span>Pazartesi - Cumartesi</span><span style="color:#1e293b">09:00 - 21:00</span></div>
+            <div class="price-row"><span style="color:#ef4444">Pazar</span><span style="color:#ef4444">Kapalı</span></div>
+        </div>
+
+        <div class="footer-text">
+            DIGITAL IDENTITY BY EMİLİO
+        </div>
+
     </div>
 </body>
 </html>
