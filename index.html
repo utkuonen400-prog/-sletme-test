@@ -3,42 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BAY SERCAN | Dijital Kartvizit</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <title>Salon Gülhan | Atakum'un Tercihi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: #0f172a; color: #f8fafc; display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 20px; }
-        .container { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); width: 100%; max-width: 400px; padding: 40px 30px; border-radius: 24px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); text-align: center; }
-        .logo-circle { width: 80px; height: 80px; background: linear-gradient(135deg, #3b82f6, #8b5cf6); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 32px; font-weight: bold; box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
-        h1 { font-size: 26px; margin-bottom: 8px; letter-spacing: -0.5px; text-transform: uppercase; }
-        p { color: #94a3b8; font-size: 15px; margin-bottom: 30px; }
-        .btn { display: flex; align-items: center; justify-content: center; gap: 10px; background: #334155; color: white; padding: 18px; margin-bottom: 15px; border-radius: 14px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; border: 1px solid rgba(255, 255, 255, 0.05); }
-        .btn:active { transform: scale(0.95); }
-        .btn-primary { background: #3b82f6; border: none; }
-        .btn-whatsapp { background: #10b981; border: none; }
-        .footer-tag { margin-top: 30px; font-size: 10px; color: #475569; text-transform: uppercase; letter-spacing: 2px; }
+        body { background: radial-gradient(circle at top, #1e293b, #0f172a); color: #f8fafc; display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 20px; }
+        .container { background: rgba(30, 41, 59, 0.6); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.08); width: 100%; max-width: 420px; padding: 35px 25px; border-radius: 30px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7); text-align: center; }
+        
+        .logo-area { width: 110px; height: 110px; background: #fff; border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 3px solid #3b82f6; box-shadow: 0 0 25px rgba(59, 130, 246, 0.4); }
+        .logo-img { width: 90%; height: auto; }
+
+        h1 { font-size: 24px; font-weight: 700; letter-spacing: 1px; margin-bottom: 5px; color: #fff; }
+        .subtitle { color: #3b82f6; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; }
+        
+        /* Eklediğimiz Bio Metin Alanı */
+        .bio-section { background: rgba(255, 255, 255, 0.03); padding: 15px; border-radius: 15px; margin-bottom: 25px; border-left: 3px solid #3b82f6; text-align: left; }
+        .bio-text { font-size: 14px; color: #cbd5e1; line-height: 1.6; font-style: italic; }
+
+        .services-grid { display: flex; justify-content: space-around; margin-bottom: 25px; font-size: 12px; color: #94a3b8; }
+        .service-item { display: flex; flex-direction: column; gap: 5px; }
+
+        .btn { display: flex; align-items: center; justify-content: center; gap: 12px; background: #1e293b; color: white; padding: 16px; margin-bottom: 12px; border-radius: 16px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; border: 1px solid rgba(255, 255, 255, 0.05); font-size: 15px; }
+        .btn:active { transform: scale(0.96); }
+        .btn-whatsapp { background: linear-gradient(135deg, #10b981, #059669); border: none; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3); }
+        .btn-call { background: linear-gradient(135deg, #3b82f6, #2563eb); border: none; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3); }
+
+        .footer { margin-top: 30px; font-size: 10px; color: #475569; letter-spacing: 1px; }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="logo-circle">S</div>
-        <h1>BAY SERCAN</h1>
-        <p>Profesyonel Hizmet & Müşteri Memnuniyeti</p>
+        <div class="logo-area">
+            <img src="https://lh3.googleusercontent.com/pw/AMWts8" alt="Salon Gülhan" class="logo-img">
+        </div>
         
-        <a href="https://wa.me/905464725801" class="btn btn-whatsapp">
-            <span>💬 WhatsApp Hattı</span>
+        <h1>SALON GÜLHAN</h1>
+        <div class="subtitle">Premium Barber Studio</div>
+
+        <div class="bio-section">
+            <p class="bio-text">
+                "Atakum'da stilin ve konforun buluşma noktası. Modern kesim teknikleri ve kişiye özel bakım hizmetlerimizle, imajınızı bir üst seviyeye taşıyoruz."
+            </p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-item"><span>✂️</span><span>Saç Tasarım</span></div>
+            <div class="service-item"><span>🪒</span><span>Sakal Bakım</span></div>
+            <div class="service-item"><span>💆‍♂️</span><span>Cilt Bakımı</span></div>
+        </div>
+        
+        <a href="https://wa.me/905XXXXXXXXX" class="btn btn-whatsapp">
+            <span>💬 Hızlı Randevu Al</span>
         </a>
         
-        <a href="tel:05464725801" class="btn btn-primary">
-            <span>📞 Hemen Ara</span>
+        <a href="tel:05XXXXXXXXX" class="btn btn-call">
+            <span>📞 İletişime Geç</span>
         </a>
         
-        <a href="https://www.google.com/maps/search/?api=1&query=BAY+SERCAN" class="btn">
-            <span>📍 Yol Tarifi Al</span>
+        <a href="https://maps.google.com" class="btn">
+            <span>📍 Atakum Yol Tarifi</span>
         </a>
 
-        <div class="footer-tag">Design by EMİLİO Digital</div>
+        <div class="footer">POWERED BY EMİLİO DIGITAL</div>
     </div>
 </body>
 </html>
-
